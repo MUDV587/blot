@@ -21,7 +21,7 @@ public class Script : MonoBehaviour {
 
 
 	void Awake () {
-		_inkStory = Story.CreateWithJson (inkAsset.text);
+		_inkStory = new Story (inkAsset.text);
 		storyNeeded = true;
 	}
 
@@ -46,7 +46,7 @@ public class Script : MonoBehaviour {
 					choice.transform.Translate (new Vector2 (0, offset));
 
 					UnityEngine.UI.Text choiceText = choice.GetComponentInChildren<UnityEngine.UI.Text> ();
-					choiceText.text = _inkStory.currentChoices [ii].choiceText;
+					choiceText.text = _inkStory.currentChoices [ii].text;
 
 					UnityEngine.UI.HorizontalLayoutGroup layoutGroup = choice.GetComponent <UnityEngine.UI.HorizontalLayoutGroup> ();
 
